@@ -1,0 +1,64 @@
+﻿@model IEnumerable<OToChoThue.Models.DonThueXe>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ThongTinKhachHang.HoTen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoaiXe.TenXe)
+            
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayThue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayTra)
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TongTien)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThongTinKhachHang.HoTen)
+           
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoaiXe.TenXe)
+           
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayThue)
+           
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayTra)
+  
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TongTien)
+           
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DonThueID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DonThueID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DonThueID })
+        </td>
+    </tr>
+}
+
+</table>
