@@ -4,12 +4,9 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Security.Cryptography;
-using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using OToChoThue.Models;
-
 
 namespace OToChoThue.Controllers
 {
@@ -27,13 +24,13 @@ namespace OToChoThue.Controllers
         {
             if (ModelState.IsValid)
             {
-                
-                
+
+
                 var obj = db.DangNhap.Where(a => a.TaiKhoan.Equals(objUser.TaiKhoan) && a.MatKhau.Equals(objUser.MatKhau)).FirstOrDefault();
                 if (obj != null)
                 {
                     Session["TaiKhoan"] = obj.TaiKhoan.ToString();
-                    return RedirectToAction("Index","DonThueXes");
+                    return RedirectToAction("Index", "DonThueXes");
                 }
 
                 else
@@ -45,8 +42,7 @@ namespace OToChoThue.Controllers
             return View();
         }
 
-     
-       
+
+
     }
 }
-    
